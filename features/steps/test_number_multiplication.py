@@ -19,8 +19,3 @@ def step(context):
 @then("result of multiplication is equal to {result}")
 def step(context, result):
     assert context.result == eval(result)
-
-
-@then("{exception} has been thrown")
-def step(context, exception):
-    assert isinstance(context.exception, eval(exception))
