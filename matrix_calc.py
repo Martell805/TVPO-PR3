@@ -3,6 +3,10 @@ from matrix_exceptions import MatrixDoNotMatchException
 
 class MatrixCalc:
     @staticmethod
+    def multiply(matrix1, matrix2):
+        ...
+
+    @staticmethod
     def __get_sub_matrix(i, j, matrix):
         return [
             [
