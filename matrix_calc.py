@@ -60,4 +60,10 @@ class MatrixCalc:
 
     @staticmethod
     def number_multiplication(matrix, number):
-        pass
+        result = []
+        for i in range(len(matrix)):
+            row = []
+            for j in range(len(matrix[0])):
+                row.append(matrix[i][j] * number)
+            result.append(row)
+        return result
