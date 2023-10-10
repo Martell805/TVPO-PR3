@@ -43,3 +43,7 @@ class MatrixCalc:
             result += multiplier * element * MatrixCalc.determinant(MatrixCalc.__get_sub_matrix(0, j, matrix))
 
         return result
+
+    @staticmethod
+    def addition(matrix1, matrix2):
+        pass
