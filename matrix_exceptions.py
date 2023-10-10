@@ -1,0 +1,6 @@
+class MatrixException(Exception):
+    ...
+
+
+class MatrixDoNotMatchException(MatrixException):
+    ...
