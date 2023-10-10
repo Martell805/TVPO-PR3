@@ -57,3 +57,7 @@ class MatrixCalc:
             result.append(row)
 
         return result
+
+    @staticmethod
+    def number_multiplication(matrix, number):
+        pass
