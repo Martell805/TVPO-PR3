@@ -87,4 +87,28 @@ class MatrixCalc:
 
     @staticmethod
     def inverse_matrix(matrix):
-        pass
+        for row in matrix:
+            if len(row) != len(matrix):
+                raise MatrixDoNotMatchException()
+
+        det = MatrixCalc.determinant(matrix)
+        if det == 0:
+            raise MatrixDoNotMatchException()
+
+        result = []
+        for i in range(len(matrix)):
+            matrix_row = []
+            for j in range(len(matrix)):
+                additional_matrix = deepcopy(matrix)
+                additional_matrix.pop(i)
+                for row in additional_matrix:
+                    row.pop(j)
+                if i + j % 2 != 0:
+                    matrix_row.append(MatrixCalc.determinant(additional_matrix) * -1 // det)
+                else:
+                    matrix_row.append(MatrixCalc.determinant(additional_matrix) // det)
+            result.append(matrix_row)
+
+        result = MatrixCalc.transposition(result)
+        return result
+
