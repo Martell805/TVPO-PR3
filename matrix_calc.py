@@ -84,3 +84,7 @@ class MatrixCalc:
                 row.append(matrix[j][i])
             result.append(row)
         return result
+
+    @staticmethod
+    def inverse_matrix(matrix):
+        pass
