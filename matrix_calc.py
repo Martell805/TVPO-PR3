@@ -1,3 +1,5 @@
+from copy import deepcopy
+
 from matrix_exceptions import MatrixDoNotMatchException
 
 
@@ -30,6 +32,8 @@ class MatrixCalc:
     @staticmethod
     def determinant(matrix):
         rows, cols = len(matrix), len(matrix[0])
+        if rows == 1 and cols == 1:
+            return matrix[0][0]
         if cols != rows:
             raise MatrixDoNotMatchException()
 
@@ -67,3 +71,7 @@ class MatrixCalc:
                 row.append(matrix[i][j] * number)
             result.append(row)
         return result
+
+@staticmethod
+def transposition(matrix):
+    pass
