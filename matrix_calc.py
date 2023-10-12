@@ -71,7 +71,16 @@ class MatrixCalc:
                 row.append(matrix[i][j] * number)
             result.append(row)
         return result
+    @staticmethod
+    def transposition(matrix):
+        result = []
+        for i in range(len(matrix)):
+            if len(matrix[0]) != len(matrix[i]):
+                raise MatrixDoNotMatchException()
 
-@staticmethod
-def transposition(matrix):
-    pass
+        for i in range(len(matrix[0])):
+            row = []
+            for j in range(len(matrix)):
+                row.append(matrix[j][i])
+            result.append(row)
+        return result
